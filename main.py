@@ -1,4 +1,5 @@
-import sys, requests, time
+import sys, requests, time, threading
+
 import window1, window2, window3
 
 from PyQt5.QtWidgets import QApplication,QMainWindow
@@ -17,11 +18,13 @@ def SwitchTo_TermsWindow():
     TermsWindow_wd.TermsWindow_NextBtn.clicked.connect(SwitchTo_NetworkWindow)
 
 
+
 def SwitchTo_NetworkWindow():
     NetworkWindow_wd = window3.Ui_NetworkWindow()
     NetworkWindow_wd.setupUi(mainWindow)
-    NetworkWindow_wd.NetworkWindow_NextBtn.clicked.connect(SwitchTo_NetworkWindow)
-
+    #另开线程，先加载窗口，再检测网络连接
+    t = threading.Thread(target=NetworkWindow_wd.NetworkCheck_NetworkWindow)
+    t.start()
 
 
 

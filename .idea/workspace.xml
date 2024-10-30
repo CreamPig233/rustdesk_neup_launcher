@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bdc96b1-3e3e-45ad-b254-809e82d94610" name="更改" comment="实现欢迎使用、用户协议窗口功能">
+    <list default="true" id="1bdc96b1-3e3e-45ad-b254-809e82d94610" name="更改" comment="更新用户协议">
+      <change afterPath="$PROJECT_DIR$/networkcheck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window1.py" beforeDir="false" afterPath="$PROJECT_DIR$/window1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window1.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui_window1.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/window2.py" beforeDir="false" afterPath="$PROJECT_DIR$/window2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window2.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui_window2.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window3.py" beforeDir="false" afterPath="$PROJECT_DIR$/window3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window3.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui_window3.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window4.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui_window4.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window5.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui_window5.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,8 +56,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.main.executor": "Run",
+    "Python.networkcheck.executor": "Run",
     "Python.window2.executor": "Run",
-    "Python.window3.executor": "Debug",
+    "Python.window3.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "D:/rustdesk/rustdesk_neup_launcher/venv/Scripts/python.exe",
@@ -73,7 +90,8 @@
       <workItem from="1730010460352" duration="1000" />
       <workItem from="1730124847059" duration="672000" />
       <workItem from="1730125599716" duration="2317000" />
-      <workItem from="1730205677668" duration="5424000" />
+      <workItem from="1730205677668" duration="9615000" />
+      <workItem from="1730253575149" duration="7647000" />
     </task>
     <task id="LOCAL-00001" summary="实现欢迎使用、用户协议窗口功能">
       <option name="closed" value="true" />
@@ -83,19 +101,40 @@
       <option name="project" value="LOCAL" />
       <updated>1730210200903</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新用户协议">
+      <option name="closed" value="true" />
+      <created>1730211408879</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730211408879</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="实现欢迎使用、用户协议窗口功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现欢迎使用、用户协议窗口功能" />
+    <MESSAGE value="更新用户协议" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新用户协议" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$window2.coverage" NAME="window2 覆盖结果" MODIFIED="1730206026850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$window3.coverage" NAME="window3 覆盖结果" MODIFIED="1730210019127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$main.coverage" NAME="main 覆盖结果" MODIFIED="1730210137403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$window2.coverage" NAME="window2 覆盖结果" MODIFIED="1730211361554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$networkcheck.coverage" NAME="networkcheck 覆盖结果" MODIFIED="1730260329664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$window3.coverage" NAME="window3 覆盖结果" MODIFIED="1730255524393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$main.coverage" NAME="main 覆盖结果" MODIFIED="1730261846730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

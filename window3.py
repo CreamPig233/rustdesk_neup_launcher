@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'window3.ui'
+# Form implementation generated from reading ui file 'ui_window3.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -9,9 +9,11 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot
+import networkcheck
 
 class Ui_NetworkWindow(object):
+
     def setupUi(self, NetworkWindow):
         NetworkWindow.setObjectName("NetworkWindow")
         NetworkWindow.resize(548, 582)
@@ -24,6 +26,7 @@ class Ui_NetworkWindow(object):
         font.setPointSize(15)
         self.label.setFont(font)
         self.label.setObjectName("label")
+
         self.NetworkWindow_NextBtn = QtWidgets.QPushButton(self.centralwidget)
         self.NetworkWindow_NextBtn.setGeometry(QtCore.QRect(180, 500, 151, 51))
         font = QtGui.QFont()
@@ -31,13 +34,18 @@ class Ui_NetworkWindow(object):
         font.setPointSize(12)
         self.NetworkWindow_NextBtn.setFont(font)
         self.NetworkWindow_NextBtn.setObjectName("NetworkWindow_NextBtn")
-        self.NetworkWindow_RetryBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.NetworkWindow_RetryBtn.setGeometry(QtCore.QRect(180, 440, 151, 51))
-        font = QtGui.QFont()
-        font.setFamily("HarmonyOS Sans SC")
-        font.setPointSize(12)
-        self.NetworkWindow_RetryBtn.setFont(font)
-        self.NetworkWindow_RetryBtn.setObjectName("NetworkWindow_RetryBtn")
+        self.NetworkWindow_NextBtn.setEnabled(False)
+
+        #重试按钮先去掉，没想好怎么实现
+        #self.NetworkWindow_RetryBtn = QtWidgets.QPushButton(self.centralwidget)
+        #self.NetworkWindow_RetryBtn.setGeometry(QtCore.QRect(180, 440, 151, 51))
+        #font = QtGui.QFont()
+        #font.setFamily("HarmonyOS Sans SC")
+        #font.setPointSize(12)
+        #self.NetworkWindow_RetryBtn.setFont(font)
+        #self.NetworkWindow_RetryBtn.setObjectName("NetworkWindow_RetryBtn")
+        #self.NetworkWindow_RetryBtn.setEnabled(False)
+
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(160, 150, 142, 160))
         font = QtGui.QFont()
@@ -48,15 +56,15 @@ class Ui_NetworkWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.label_2 = QtWidgets.QLabel(self.layoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("HarmonyOS Sans SC")
-        font.setPointSize(12)
-        self.label_2.setFont(font)
-        self.label_2.setLineWidth(1)
-        self.label_2.setMidLineWidth(0)
-        self.label_2.setObjectName("label_2")
-        self.verticalLayout.addWidget(self.label_2)
+        #self.label_2 = QtWidgets.QLabel(self.layoutWidget)
+        #font = QtGui.QFont()
+        #font.setFamily("HarmonyOS Sans SC")
+        #font.setPointSize(12)
+        #self.label_2.setFont(font)
+        #self.label_2.setLineWidth(1)
+        #self.label_2.setMidLineWidth(0)
+        #self.label_2.setObjectName("label_2")
+        #self.verticalLayout.addWidget(self.label_2)
         self.label_3 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("HarmonyOS Sans SC")
@@ -93,6 +101,7 @@ class Ui_NetworkWindow(object):
         self.label_6.setMidLineWidth(0)
         self.label_6.setObjectName("label_6")
         self.verticalLayout.addWidget(self.label_6)
+
         self.layoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
         self.layoutWidget_2.setGeometry(QtCore.QRect(310, 150, 71, 160))
         font = QtGui.QFont()
@@ -103,51 +112,59 @@ class Ui_NetworkWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.layoutWidget_2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.isConnectNetwork = QtWidgets.QLabel(self.layoutWidget_2)
+
+        #这个删掉了没啥用
+
+        #self.isConnectNetwork_label = QtWidgets.QLabel(self.layoutWidget_2)
+        #font = QtGui.QFont()
+        #font.setFamily("HarmonyOS Sans SC")
+        #font.setPointSize(12)
+        #self.isConnectNetwork_label.setFont(font)
+        #self.isConnectNetwork_label.setLineWidth(1)
+        #self.isConnectNetwork_label.setMidLineWidth(0)
+        #self.isConnectNetwork_label.setObjectName("isConnectNetwork_label")
+        #self.verticalLayout_2.addWidget(self.isConnectNetwork_label)
+
+        self.isConnectCampus_label = QtWidgets.QLabel(self.layoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("HarmonyOS Sans SC")
         font.setPointSize(12)
-        self.isConnectNetwork.setFont(font)
-        self.isConnectNetwork.setLineWidth(1)
-        self.isConnectNetwork.setMidLineWidth(0)
-        self.isConnectNetwork.setObjectName("isConnectNetwork")
-        self.verticalLayout_2.addWidget(self.isConnectNetwork)
-        self.isConnectCampus = QtWidgets.QLabel(self.layoutWidget_2)
+        self.isConnectCampus_label.setFont(font)
+        self.isConnectCampus_label.setLineWidth(1)
+        self.isConnectCampus_label.setMidLineWidth(0)
+        self.isConnectCampus_label.setObjectName("isConnectCampus_label")
+        self.verticalLayout_2.addWidget(self.isConnectCampus_label)
+
+        self.isSupportIPv4_label = QtWidgets.QLabel(self.layoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("HarmonyOS Sans SC")
         font.setPointSize(12)
-        self.isConnectCampus.setFont(font)
-        self.isConnectCampus.setLineWidth(1)
-        self.isConnectCampus.setMidLineWidth(0)
-        self.isConnectCampus.setObjectName("isConnectCampus")
-        self.verticalLayout_2.addWidget(self.isConnectCampus)
-        self.isSupportIPv4 = QtWidgets.QLabel(self.layoutWidget_2)
+        self.isSupportIPv4_label.setFont(font)
+        self.isSupportIPv4_label.setLineWidth(1)
+        self.isSupportIPv4_label.setMidLineWidth(0)
+        self.isSupportIPv4_label.setObjectName("isSupportIPv4_label")
+        self.verticalLayout_2.addWidget(self.isSupportIPv4_label)
+
+        self.isSupportIPv6_label = QtWidgets.QLabel(self.layoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("HarmonyOS Sans SC")
         font.setPointSize(12)
-        self.isSupportIPv4.setFont(font)
-        self.isSupportIPv4.setLineWidth(1)
-        self.isSupportIPv4.setMidLineWidth(0)
-        self.isSupportIPv4.setObjectName("isSupportIPv4")
-        self.verticalLayout_2.addWidget(self.isSupportIPv4)
-        self.isSupportIPv6 = QtWidgets.QLabel(self.layoutWidget_2)
+        self.isSupportIPv6_label.setFont(font)
+        self.isSupportIPv6_label.setLineWidth(1)
+        self.isSupportIPv6_label.setMidLineWidth(0)
+        self.isSupportIPv6_label.setObjectName("isSupportIPv6_label")
+        self.verticalLayout_2.addWidget(self.isSupportIPv6_label)
+
+        self.isConnectServer_label = QtWidgets.QLabel(self.layoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("HarmonyOS Sans SC")
         font.setPointSize(12)
-        self.isSupportIPv6.setFont(font)
-        self.isSupportIPv6.setLineWidth(1)
-        self.isSupportIPv6.setMidLineWidth(0)
-        self.isSupportIPv6.setObjectName("isSupportIPv6")
-        self.verticalLayout_2.addWidget(self.isSupportIPv6)
-        self.isConnectServer = QtWidgets.QLabel(self.layoutWidget_2)
-        font = QtGui.QFont()
-        font.setFamily("HarmonyOS Sans SC")
-        font.setPointSize(12)
-        self.isConnectServer.setFont(font)
-        self.isConnectServer.setLineWidth(1)
-        self.isConnectServer.setMidLineWidth(0)
-        self.isConnectServer.setObjectName("isConnectServer")
-        self.verticalLayout_2.addWidget(self.isConnectServer)
+        self.isConnectServer_label.setFont(font)
+        self.isConnectServer_label.setLineWidth(1)
+        self.isConnectServer_label.setMidLineWidth(0)
+        self.isConnectServer_label.setObjectName("isConnectServer")
+        self.verticalLayout_2.addWidget(self.isConnectServer_label)
+
         self.DetailsInfo_Label = QtWidgets.QLabel(self.centralwidget)
         self.DetailsInfo_Label.setGeometry(QtCore.QRect(90, 360, 351, 31))
         font = QtGui.QFont()
@@ -161,20 +178,23 @@ class Ui_NetworkWindow(object):
         self.retranslateUi(NetworkWindow)
         QtCore.QMetaObject.connectSlotsByName(NetworkWindow)
 
+    def NetworkCheck_NetworkWindow(self):   #在这绕了一下，不然线程会阻塞，不知道为啥
+        networkcheck.NetworkCheck(self)
+
     def retranslateUi(self, NetworkWindow):
         _translate = QtCore.QCoreApplication.translate
         NetworkWindow.setWindowTitle(_translate("NetworkWindow", "网络检测"))
         self.label.setText(_translate("NetworkWindow", "正在检测您的网络环境……"))
         self.NetworkWindow_NextBtn.setText(_translate("NetworkWindow", "下一步"))
-        self.NetworkWindow_RetryBtn.setText(_translate("NetworkWindow", "重试"))
-        self.label_2.setText(_translate("NetworkWindow", "连接到互联网"))
+        #self.NetworkWindow_RetryBtn.setText(_translate("NetworkWindow", "重试"))
+        #self.label_2.setText(_translate("NetworkWindow", "连接到互联网"))
         self.label_3.setText(_translate("NetworkWindow", "处于校园网环境"))
         self.label_4.setText(_translate("NetworkWindow", "IPv4支持"))
         self.label_5.setText(_translate("NetworkWindow", "IPv6支持"))
         self.label_6.setText(_translate("NetworkWindow", "服务器连通"))
-        self.isConnectNetwork.setText(_translate("NetworkWindow", "检测中"))
-        self.isConnectCampus.setText(_translate("NetworkWindow", "检测中"))
-        self.isSupportIPv4.setText(_translate("NetworkWindow", "检测中"))
-        self.isSupportIPv6.setText(_translate("NetworkWindow", "检测中"))
-        self.isConnectServer.setText(_translate("NetworkWindow", "检测中"))
+        #self.isConnectNetwork_label.setText(_translate("NetworkWindow", "检测中"))
+        self.isConnectCampus_label.setText(_translate("NetworkWindow", "检测中"))
+        self.isSupportIPv4_label.setText(_translate("NetworkWindow", "检测中"))
+        self.isSupportIPv6_label.setText(_translate("NetworkWindow", "检测中"))
+        self.isConnectServer_label.setText(_translate("NetworkWindow", "检测中"))
         self.DetailsInfo_Label.setText(_translate("NetworkWindow", "请等待检测……"))
