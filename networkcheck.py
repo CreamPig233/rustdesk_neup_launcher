@@ -89,7 +89,29 @@ def NetworkCheck(self):
         self.isSupportIPv6_label.setText("失败")
         print(e)
 
-    if isConnectCampus==True and isSupportIPv4==False and isSupportIPv6==False:
+        # 检测rustdesk服务器
+
+    ip = "172.20.65.19"  # 这里是 Rustdesk server ip
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    port = 21116  # Rustdesk Server 端口号
+    try:
+        sock.connect((ip, port))
+        self.isConnectServer_label.setStyleSheet("color:green")
+        self.isConnectServer_label.setText("成功")
+        isConnectServer = True
+    except Exception as e:
+        self.isConnectServer_label.setStyleSheet("color:red")
+        self.isConnectServer_label.setText("失败")
+        self.NetworkWindow_CustomBtn.setEnabled(True)
+        print(e)
+
+    # 测试用代码：
+    #isConnectServer = False
+
+
+
+    if isConnectCampus==True and isSupportIPv4==False and isConnectServer==False:
         #检查IPGW是否登录
         login_status = requests.get('https://ipgw.neu.edu.cn/cgi-bin/rad_user_info?callback=%20', timeout=1).text
         if '"error":"not_online_error"' in login_status:     #未登录
@@ -106,26 +128,9 @@ def NetworkCheck(self):
             self.isConnectCampus_label.setStyleSheet("color:red")
             self.isConnectCampus_label.setText("Proxy")
 
-    #检测rustdesk服务器
 
-    ip = "2001:da8:9000:a362:e75f:c6e:6cd8:e33a"   #这里是 Rustdesk server ip
-    sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
 
-    port = 21116 # Rustdesk Server 端口号
-    try:
-        sock.connect((ip, port))
-        self.isConnectServer_label.setStyleSheet("color:green")
-        self.isConnectServer_label.setText("成功")
-        isConnectServer=True
-    except Exception as e:
-        self.isConnectServer_label.setStyleSheet("color:red")
-        self.isConnectServer_label.setText("失败")
-        print(e)
-
-    #测试用代码：
-    isConnectServer = True
-
-    if isConnectCampus and isSupportIPv6 and isConnectServer:
+    if isConnectCampus and isConnectServer:
         self.NetworkWindow_NextBtn.setEnabled(True)
 
     #self.NetworkWindow_RetryBtn.clicked.connect(lambda: self.NetworkCheck_NetworkWindow(self))

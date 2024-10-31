@@ -27,6 +27,15 @@ class Ui_NetworkWindow(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
 
+        self.NetworkWindow_CustomBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.NetworkWindow_CustomBtn.setGeometry(QtCore.QRect(180, 440, 151, 51))
+        font = QtGui.QFont()
+        font.setFamily("HarmonyOS Sans SC")
+        font.setPointSize(12)
+        self.NetworkWindow_CustomBtn.setFont(font)
+        self.NetworkWindow_CustomBtn.setObjectName("NetworkWindow_CustomBtn")
+        self.NetworkWindow_CustomBtn.setEnabled(False)
+
         self.NetworkWindow_NextBtn = QtWidgets.QPushButton(self.centralwidget)
         self.NetworkWindow_NextBtn.setGeometry(QtCore.QRect(180, 500, 151, 51))
         font = QtGui.QFont()
@@ -187,6 +196,7 @@ class Ui_NetworkWindow(object):
         self.label.setText(_translate("NetworkWindow", "正在检测您的网络环境……"))
         self.NetworkWindow_NextBtn.setText(_translate("NetworkWindow", "下一步"))
         #self.NetworkWindow_RetryBtn.setText(_translate("NetworkWindow", "重试"))
+        self.NetworkWindow_CustomBtn.setText(_translate("NetworkWindow", "修改服务器"))
         #self.label_2.setText(_translate("NetworkWindow", "连接到互联网"))
         self.label_3.setText(_translate("NetworkWindow", "处于校园网环境"))
         self.label_4.setText(_translate("NetworkWindow", "IPv4支持"))
