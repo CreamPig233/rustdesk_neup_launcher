@@ -3,7 +3,7 @@ import os, os.path, shutil
 
 #测试用代码
 workdir=os.getcwd()
-workdir=r'D:\rdtest'
+#workdir=r'D:\rdtest'
 
 ip=networkcheck.serverip
 key="hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c="
