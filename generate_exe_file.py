@@ -1,4 +1,5 @@
 import base64, networkcheck
+import os
 
 ip=networkcheck.serverip
 key="hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c="
