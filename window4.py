@@ -52,10 +52,27 @@ class Ui_ServerWindow(object):
         self.CustomKey = QtWidgets.QLineEdit(self.centralwidget)
         self.CustomKey.setGeometry(QtCore.QRect(220, 280, 201, 31))
         self.CustomKey.setObjectName("CustomKey")
+        self.UseOfficialServer = QtWidgets.QCheckBox(self.centralwidget)
+        self.UseOfficialServer.setGeometry(QtCore.QRect(170, 340, 171, 31))
+        font = QtGui.QFont()
+        font.setFamily("HarmonyOS Sans SC")
+        font.setPointSize(12)
+        self.UseOfficialServer.setFont(font)
+        self.UseOfficialServer.setObjectName("UseOfficialServer")
         ServerWindow.setCentralWidget(self.centralwidget)
+        self.UseOfficialServer.stateChanged.connect(self.change_toggle)
 
         self.retranslateUi(ServerWindow)
         QtCore.QMetaObject.connectSlotsByName(ServerWindow)
+
+    # 使用官方服务器打勾之后，使自定义服务器地址和Key输入框失效
+    def change_toggle(self, state):
+        if state == QtCore.Qt.Checked:
+            self.CustomServer.setEnabled(False)
+            self.CustomKey.setEnabled(False)
+        else:
+            self.CustomServer.setEnabled(True)
+            self.CustomKey.setEnabled(True)
 
     def retranslateUi(self, ServerWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -66,3 +83,4 @@ class Ui_ServerWindow(object):
         self.ServerWindow_NextBtn.setText(_translate("ServerWindow", "下一步"))
         self.label_3.setText(_translate("ServerWindow", "Key"))
         self.CustomKey.setPlaceholderText(_translate("ServerWindow", "留空以不做修改"))
+        self.UseOfficialServer.setText(_translate("ServerWindow", "使用官方服务器"))
