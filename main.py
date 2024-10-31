@@ -1,6 +1,8 @@
 import sys, requests, time, threading
 
-import window1, window2, window3, window4
+import networkcheck
+import window1, window2, window3, window4, window5
+import generate_exe_file
 
 from PyQt5.QtWidgets import QApplication,QMainWindow
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton
@@ -12,6 +14,9 @@ import requests
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QPushButton
 from PyQt5.QtCore import QThread, pyqtSignal
 
+from generate_exe_file import generate_config_string
+
+
 def SwitchTo_TermsWindow():
     TermsWindow_wd = window2.Ui_TermsWindow()
     TermsWindow_wd.setupUi(mainWindow)
@@ -21,14 +26,43 @@ def SwitchTo_NetworkWindow():
     NetworkWindow_wd = window3.Ui_NetworkWindow()
     NetworkWindow_wd.setupUi(mainWindow)
     NetworkWindow_wd.NetworkWindow_CustomBtn.clicked.connect(SwitchTo_ServerWindow)
+    NetworkWindow_wd.NetworkWindow_NextBtn.clicked.connect(SwitchTo_ReadyWindow)
     #另开线程，先加载窗口，再检测网络连接
     t = threading.Thread(target=NetworkWindow_wd.NetworkCheck_NetworkWindow)
     t.start()
 
+def ChangeServer_and_SwitchToNetworkWindow(ServerWindow_wd):
+    try:
+        new_ip = ServerWindow_wd.CustomServer.text()
+        if new_ip != '':
+            networkcheck.serverip = new_ip
+        else:
+            raise Exception
+    except Exception as e:
+        pass
+
+    try:
+        new_key = ServerWindow_wd.CustomKey.text()
+        if new_key != '':
+            generate_exe_file.key = new_key
+        else:
+            raise Exception
+    except Exception as e:
+        pass
+    SwitchTo_NetworkWindow()
+
 def SwitchTo_ServerWindow():
     ServerWindow_wd = window4.Ui_ServerWindow()
     ServerWindow_wd.setupUi(mainWindow)
-    ServerWindow_wd.ServerWindow_NextBtn.clicked.connect(SwitchTo_NetworkWindow)
+    ServerWindow_wd.ServerWindow_NextBtn.clicked.connect(lambda: ChangeServer_and_SwitchToNetworkWindow(ServerWindow_wd))
+
+def SwitchTo_ReadyWindow():
+    try:
+        generate_exe_file.generate_config_string()
+    except Exception as e:
+        print(e)
+    ReadyWindow_wd = window5.Ui_ReadyWindow()
+    ReadyWindow_wd.setupUi(mainWindow)
 
 if __name__ == '__main__':
 

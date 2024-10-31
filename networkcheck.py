@@ -3,6 +3,8 @@ import socket
 import requests
 import winreg
 
+serverip='172.20.65.19'
+
 def NetworkCheck(self):
     # time.sleep(1)
 
@@ -91,12 +93,12 @@ def NetworkCheck(self):
 
         # 检测rustdesk服务器
 
-    ip = "172.20.65.19"  # 这里是 Rustdesk server ip
+    # Rustdesk server ip 由函数参数传入
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+    print('serverip:'+serverip)
     port = 21116  # Rustdesk Server 端口号
     try:
-        sock.connect((ip, port))
+        sock.connect((serverip, port))
         self.isConnectServer_label.setStyleSheet("color:green")
         self.isConnectServer_label.setText("成功")
         isConnectServer = True

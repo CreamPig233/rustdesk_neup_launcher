@@ -1,9 +1,12 @@
-import base64
+import base64, networkcheck
 
-def generate_config_string(ip, key):
+ip=networkcheck.serverip
+key="hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c="
+
+def generate_config_string():
     original_config = {"host":ip,"relay":"","api":"","key":key}
     original_config = str(original_config).replace(" ", "").replace("'", "\"")
-
+    print('gener:'+ip)
     print(original_config)
     base64_config = base64.b64encode(original_config.encode()).decode()
     base64_config = base64_config.replace("=", "")
