@@ -3,10 +3,9 @@ import socket
 import requests
 import winreg
 
-serverip='172.20.65.19'
+serverip='172.20.65.19'     #发布时应修改默认服务器ip
 
 def NetworkCheck(self):
-    # time.sleep(1)
 
     isConnectCampus=False
     isSupportIPv4=False

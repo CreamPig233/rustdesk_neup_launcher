@@ -2,11 +2,12 @@ import base64, networkcheck
 import os, os.path, shutil
 
 #测试用代码
-workdir=os.getcwd()
-#workdir=r'D:\rdtest'
+
+workdir=os.getcwd()     #发布版应该用这个
+#workdir=r'D:\rdtest'   #测试用代码
 
 ip=networkcheck.serverip
-key="hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c="
+key="hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c="  #发布时应修改默认key
 new_file_name=''
 
 use_official_server = False
