@@ -1,4 +1,4 @@
-import sys, requests, time, threading
+import sys, requests, time, threading, os, subprocess
 
 import networkcheck
 import window1, window2, window3, window4, window5
@@ -63,6 +63,13 @@ def SwitchTo_ReadyWindow():
         print(e)
     ReadyWindow_wd = window5.Ui_ReadyWindow()
     ReadyWindow_wd.setupUi(mainWindow)
+    ReadyWindow_wd.ReadyWindow_NextBtn.clicked.connect(start_rustdesk)
+
+def start_rustdesk():
+    print(generate_exe_file.get_rustdesk_path())
+    subprocess.Popen(generate_exe_file.get_rustdesk_path())
+    #subprocess.Popen('notepad.exe')
+    sys.exit()
 
 if __name__ == '__main__':
 

@@ -1,19 +1,43 @@
 import base64, networkcheck
-import os
+import os, os.path, shutil
+
+#测试用代码
+workdir=os.getcwd()
+workdir=r'D:\rdtest'
 
 ip=networkcheck.serverip
 key="hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c="
+new_file_name=''
 
 use_official_server = False
 
+def get_rustdesk_path():
+    if use_official_server:
+        return os.path.join(workdir, 'rustdesk.exe')
+    else:
+        return os.path.join(workdir, new_file_name)
+    pass
+
 def generate_exe_file():
+
+    #删除可能存在的rustdesk--*--.exe文件
+    files = os.listdir(os.path.join(workdir))
+    for file in files:
+        if 'rustdesk--' in file:
+            os.remove(os.path.join(workdir, file))
+
+
     if not use_official_server:
+        #使用自定义服务器，则生成新的exe文件
         config_string=generate_config_string()
+        global new_file_name
         new_file_name='rustdesk--'+config_string+'--.exe'
         #待补充生成exe文件的代码
+        shutil.copy(os.path.join(workdir, 'rustdesk.exe'), os.path.join(workdir, new_file_name))
+        return os.path.join(workdir, new_file_name)
     else:
         #使用原exe的代码
-        pass
+        return os.path.join(workdir, 'rustdesk.exe')
 
 
 def generate_config_string():
@@ -29,4 +53,4 @@ def generate_config_string():
 
 
 if __name__ == '__main__':
-    generate_config_string("172.20.65.19", "hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c=")
+    generate_config_string()
