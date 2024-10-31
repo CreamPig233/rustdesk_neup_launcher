@@ -119,6 +119,25 @@
      <string>留空以不做修改</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="UseOfficialServer">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>340</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>HarmonyOS Sans SC</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>使用官方服务器</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

@@ -14,7 +14,7 @@ import requests
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QPushButton
 from PyQt5.QtCore import QThread, pyqtSignal
 
-from generate_exe_file import generate_config_string
+
 
 
 def SwitchTo_TermsWindow():
@@ -32,23 +32,23 @@ def SwitchTo_NetworkWindow():
     t.start()
 
 def ChangeServer_and_SwitchToNetworkWindow(ServerWindow_wd):
-    try:
-        new_ip = ServerWindow_wd.CustomServer.text()
-        if new_ip != '':
-            networkcheck.serverip = new_ip
-        else:
-            raise Exception
-    except Exception as e:
-        pass
 
-    try:
-        new_key = ServerWindow_wd.CustomKey.text()
-        if new_key != '':
-            generate_exe_file.key = new_key
-        else:
-            raise Exception
-    except Exception as e:
-        pass
+    #修改服务器ip
+    new_ip = ServerWindow_wd.CustomServer.text()
+    if new_ip != '':
+        networkcheck.serverip = new_ip
+
+    #修改是否使用官方服务器
+    if(ServerWindow_wd.UseOfficialServer.isChecked()):
+        networkcheck.serverip = 'rs-ny.rustdesk.com'
+        generate_exe_file.use_official_server = True
+
+    #修改key
+    new_key = ServerWindow_wd.CustomKey.text()
+    if new_key != '':
+        generate_exe_file.key = new_key
+
+    #切换窗口
     SwitchTo_NetworkWindow()
 
 def SwitchTo_ServerWindow():
@@ -58,7 +58,7 @@ def SwitchTo_ServerWindow():
 
 def SwitchTo_ReadyWindow():
     try:
-        generate_exe_file.generate_config_string()
+        generate_exe_file.generate_exe_file()
     except Exception as e:
         print(e)
     ReadyWindow_wd = window5.Ui_ReadyWindow()

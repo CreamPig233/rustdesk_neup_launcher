@@ -91,9 +91,10 @@ def NetworkCheck(self):
         self.isSupportIPv6_label.setText("失败")
         print(e)
 
-        # 检测rustdesk服务器
 
-    # Rustdesk server ip 由函数参数传入
+    # 检测rustdesk服务器
+
+    # Rustdesk server ip 由变量定义，可能在main.py中的ChangeServer_and_SwitchToNetworkWindow函数中修改
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print('serverip:'+serverip)
     port = 21116  # Rustdesk Server 端口号
@@ -135,6 +136,7 @@ def NetworkCheck(self):
     if isConnectCampus and isConnectServer:
         self.NetworkWindow_NextBtn.setEnabled(True)
 
+    #这是原本的重试按钮的代码，已废弃
     #self.NetworkWindow_RetryBtn.clicked.connect(lambda: self.NetworkCheck_NetworkWindow(self))
     #self.NetworkWindow_RetryBtn.setEnabled(True)
 

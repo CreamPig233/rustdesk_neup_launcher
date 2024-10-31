@@ -46,6 +46,7 @@ class Ui_NetworkWindow(object):
         self.NetworkWindow_NextBtn.setEnabled(False)
 
         #重试按钮先去掉，没想好怎么实现
+        #补充：被自定义服务器实现了，那就注释着吧
         #self.NetworkWindow_RetryBtn = QtWidgets.QPushButton(self.centralwidget)
         #self.NetworkWindow_RetryBtn.setGeometry(QtCore.QRect(180, 440, 151, 51))
         #font = QtGui.QFont()
@@ -174,6 +175,7 @@ class Ui_NetworkWindow(object):
         self.isConnectServer_label.setObjectName("isConnectServer")
         self.verticalLayout_2.addWidget(self.isConnectServer_label)
 
+        #这个标签原本想写“请等待检测……”，后面想删掉，但是删掉了窗口加载会卡住，所以就去掉了文字
         self.DetailsInfo_Label = QtWidgets.QLabel(self.centralwidget)
         self.DetailsInfo_Label.setGeometry(QtCore.QRect(90, 360, 351, 31))
         font = QtGui.QFont()
@@ -207,4 +209,5 @@ class Ui_NetworkWindow(object):
         self.isSupportIPv4_label.setText(_translate("NetworkWindow", "检测中"))
         self.isSupportIPv6_label.setText(_translate("NetworkWindow", "检测中"))
         self.isConnectServer_label.setText(_translate("NetworkWindow", "检测中"))
-        self.DetailsInfo_Label.setText(_translate("NetworkWindow", "请等待检测……"))
+
+        self.DetailsInfo_Label.setText(_translate("NetworkWindow", ""))
