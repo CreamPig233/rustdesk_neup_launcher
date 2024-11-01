@@ -3,8 +3,8 @@ import os, os.path, shutil, log_print
 
 #测试用代码
 
-#workdir=os.getcwd()     #发布版应该用这个
-workdir=r'D:\rdtest'   #测试用代码
+workdir=os.getcwd()     #发布版应该用这个
+#workdir=r'D:\rdtest'   #测试用代码
 
 ip=networkcheck.serverip
 key="hE8ri5Xrk5p5m3lhm2931fg3I7Uh4jOByGfnjuaQK5c="  #发布时应修改默认key

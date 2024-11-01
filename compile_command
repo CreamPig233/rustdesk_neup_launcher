@@ -1,1 +1,5 @@
+
+发布版编译：
 python -m nuitka --standalone --plugin-enable=pyqt5 --windows-console-mode=disable --include-qt-plugins=sensible,styles --windows-icon-from-ico=.\icon.ico  .\main.py
+测试版编译（仅保留控制台窗口）
+python -m nuitka --standalone --plugin-enable=pyqt5 --include-qt-plugins=sensible,styles --windows-icon-from-ico=.\icon.ico  .\main.py
