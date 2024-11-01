@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bdc96b1-3e3e-45ad-b254-809e82d94610" name="更改" comment="完成生成新程序以及打开功能">
-      <change afterPath="$PROJECT_DIR$/compile_command" afterDir="false" />
+    <list default="true" id="1bdc96b1-3e3e-45ad-b254-809e82d94610" name="更改" comment="补充readme">
+      <change afterPath="$PROJECT_DIR$/log_print.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate_exe_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_exe_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/networkcheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/networkcheck.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/window3.py" beforeDir="false" afterPath="$PROJECT_DIR$/window3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,27 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.generate_config_string.executor": "Run",
-    "Python.generate_exe_file.executor": "Debug",
-    "Python.main.executor": "Run",
-    "Python.networkcheck.executor": "Run",
-    "Python.window2.executor": "Run",
-    "Python.window3.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/rustdesk/rustdesk_neup_launcher/window4.py",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "two.files.diff.last.used.file": "D:/rustdesk/rustdesk_neup_launcher/window4.py",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.generate_config_string.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_exe_file.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.networkcheck.executor&quot;: &quot;Run&quot;,
+    &quot;Python.window2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.window3.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/rustdesk/rustdesk_neup_launcher/window4.py&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;D:/rustdesk/rustdesk_neup_launcher/window4.py&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -87,7 +90,10 @@
       <workItem from="1730125599716" duration="2317000" />
       <workItem from="1730205677668" duration="9615000" />
       <workItem from="1730253575149" duration="8826000" />
-      <workItem from="1730355044322" duration="13701000" />
+      <workItem from="1730355044322" duration="14488000" />
+      <workItem from="1730378091370" duration="251000" />
+      <workItem from="1730378370514" duration="733000" />
+      <workItem from="1730437601782" duration="2692000" />
     </task>
     <task id="LOCAL-00001" summary="实现欢迎使用、用户协议窗口功能">
       <option name="closed" value="true" />
@@ -169,7 +175,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730375865466</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成拉起rustdesk工作，大概做完了">
+      <option name="closed" value="true" />
+      <created>1730377461748</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1730377461748</updated>
+    </task>
+    <task id="LOCAL-00012" summary="补全部分注释，整理代码">
+      <option name="closed" value="true" />
+      <created>1730377755921</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730377755922</updated>
+    </task>
+    <task id="LOCAL-00013" summary="补充readme">
+      <option name="closed" value="true" />
+      <created>1730378013171</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730378013171</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,14 +224,17 @@
     <MESSAGE value="完成自定义服务器功能" />
     <MESSAGE value="完成使用官方服务器功能" />
     <MESSAGE value="完成生成新程序以及打开功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成生成新程序以及打开功能" />
+    <MESSAGE value="完成拉起rustdesk工作，大概做完了" />
+    <MESSAGE value="补全部分注释，整理代码" />
+    <MESSAGE value="补充readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="补充readme" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$generate_exe_file.coverage" NAME="generate_exe_file 覆盖结果" MODIFIED="1730375096675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$window2.coverage" NAME="window2 覆盖结果" MODIFIED="1730211361554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$networkcheck.coverage" NAME="networkcheck 覆盖结果" MODIFIED="1730360263224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$networkcheck.coverage" NAME="networkcheck 覆盖结果" MODIFIED="1730439998961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$window3.coverage" NAME="window3 覆盖结果" MODIFIED="1730356718782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$main.coverage" NAME="main 覆盖结果" MODIFIED="1730375817510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$main.coverage" NAME="main 覆盖结果" MODIFIED="1730440194823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rustdesk_neup_launcher$generate_config_string.coverage" NAME="generate_config_string 覆盖结果" MODIFIED="1730366887039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

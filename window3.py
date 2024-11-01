@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import networkcheck
+import networkcheck, log_print
 
 class Ui_NetworkWindow(object):
 
@@ -189,6 +189,7 @@ class Ui_NetworkWindow(object):
         QtCore.QMetaObject.connectSlotsByName(NetworkWindow)
 
     def NetworkCheck_NetworkWindow(self):   #在这绕了一下，不然线程会阻塞，不知道为啥
+        log_print.outlog(1, "函数运行，开始检测网络")
         networkcheck.NetworkCheck(self)
 
     def retranslateUi(self, NetworkWindow):
