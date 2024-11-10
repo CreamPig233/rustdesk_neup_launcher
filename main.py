@@ -101,7 +101,8 @@ if __name__ == '__main__':
     log_print.outlog(1, "主程序运行开始")
     app = QApplication(sys.argv)
     mainWindow = QMainWindow()
-
+    dpi = QApplication.primaryScreen().logicalDotsPerInch()
+    log_print.outlog(1, "dpi:" + str(dpi))
     WelcomeWindow_wd = window1.Ui_WelcomeWindow()
     WelcomeWindow_wd.setupUi(mainWindow)
     WelcomeWindow_wd.WelcomeWindow_NextBtn.clicked.connect(SwitchTo_TermsWindow)
