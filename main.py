@@ -74,7 +74,7 @@ def SwitchTo_ReadyWindow():
     try:
         generate_exe_file.generate_exe_file()
     except Exception as e:
-        log_print.outlog(3, "生成exe文件失败，异常信息：" + e)
+        log_print.outlog(3, "生成exe文件失败，异常信息：" + str(e))
 
 
     log_print.outlog(1, "切换窗口5")
@@ -90,11 +90,10 @@ def start_rustdesk():
         log_print.outlog(1, "启动rustdesk")
         subprocess.Popen(generate_exe_file.get_rustdesk_path())
     except Exception as e:
-        log_print.outlog(2, "启动rustdesk失败，异常信息：" + e)
+        log_print.outlog(2, "启动rustdesk失败，异常信息：" + str(e))
     log_print.outlog(1, "启动rustdesk结束，退出程序")
-    log_print.outlog(2, "主程序运行结束,阻塞退出保留日志")
+    log_print.outlog(2, "主程序运行结束")
 
-    input("按任意键退出")     #此处为测试用代码，发布时去除
     sys.exit()
 
 

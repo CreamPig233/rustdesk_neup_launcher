@@ -23,6 +23,7 @@ def generate_exe_file():
 
 
     log_print.outlog(1, "开始生成exe文件")
+    log_print.outlog(1, "当前工作目录："+workdir)
     log_print.outlog(1, "删除可能存在的rustdesk--*--.exe文件")
     #删除可能存在的rustdesk--*--.exe文件
     try:
@@ -36,7 +37,7 @@ def generate_exe_file():
                 except Exception as e:
                     log_print.outlog(2, "删除失败，异常信息：" + str(e))
     except Exception as e:
-        log_print.outlog(2, "删除失败，异常信息：" + e)
+        log_print.outlog(2, "删除失败，异常信息：" + str(e))
 
 
     if not use_official_server:

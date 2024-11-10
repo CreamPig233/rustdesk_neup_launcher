@@ -9,12 +9,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import res_rc, font_rc
 
 class Ui_WelcomeWindow(object):
     def setupUi(self, WelcomeWindow):
         WelcomeWindow.setObjectName("WelcomeWindow")
         WelcomeWindow.resize(548, 582)
+        font_id = QtGui.QFontDatabase.addApplicationFont(":/HarmonyOS_Sans_SC_Regular.ttf")
+        font_family = QtGui.QFontDatabase.applicationFontFamilies(font_id)[0]
         self.centralwidget = QtWidgets.QWidget(WelcomeWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -77,4 +79,4 @@ class Ui_WelcomeWindow(object):
         self.label_2.setText(_translate("WelcomeWindow", "欢迎使用"))
         self.label_3.setText(_translate("WelcomeWindow", "先锋网络中心先锋维修"))
         self.label_4.setText(_translate("WelcomeWindow", "远程诊断维修服务"))
-import res_rc
+

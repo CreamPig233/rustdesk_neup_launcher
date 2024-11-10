@@ -61,9 +61,9 @@ def NetworkCheck(self):
     except Exception as e:
         self.isConnectCampus_label.setStyleSheet("color:red")
         self.isConnectCampus_label.setText("失败")
-        log_print.outlog(2, "检测校园网连接-失败:异常信息" + e)
+        log_print.outlog(2, "检测校园网连接-失败:异常信息" + str(e))
 
-
+    log_print.outlog(1, "检测IPv4支持")
     # 检测IPv4支持
     try:
         response = requests.get("https://mirrors4.tuna.tsinghua.edu.cn/", timeout=5)
@@ -79,8 +79,9 @@ def NetworkCheck(self):
     except Exception as e:
         self.isSupportIPv4_label.setStyleSheet("color:red")
         self.isSupportIPv4_label.setText("失败")
-        log_print.outlog(2, "检测IPv4支持-失败:异常信息" + e)
+        log_print.outlog(2, "检测IPv4支持-失败:异常信息" + str(e))
 
+    log_print.outlog(1, "检测IPv6支持")
     # 检测IPv6支持
     try:
         response = requests.get("https://mirrors6.tuna.tsinghua.edu.cn/", timeout=2)
@@ -96,7 +97,7 @@ def NetworkCheck(self):
     except Exception as e:
         self.isSupportIPv6_label.setStyleSheet("color:red")
         self.isSupportIPv6_label.setText("失败")
-        log_print.outlog(2, "检测IPv6支持-失败:异常信息" + e)
+        log_print.outlog(2, "检测IPv6支持-失败:异常信息" + str(e))
 
 
     # 检测rustdesk服务器
@@ -108,6 +109,7 @@ def NetworkCheck(self):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     port = 21116  # Rustdesk Server 端口号
     try:
+        sock.settimeout(5)
         sock.connect((serverip, port))
         self.isConnectServer_label.setStyleSheet("color:green")
         self.isConnectServer_label.setText("成功")
